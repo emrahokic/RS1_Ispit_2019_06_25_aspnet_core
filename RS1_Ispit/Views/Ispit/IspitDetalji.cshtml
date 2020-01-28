@@ -1,0 +1,23 @@
+﻿@model RS1_Ispit_asp.net_core.ViewModels.IspitDetaljiVM
+@{
+    ViewData["Title"] = "IspitDetalji";
+}
+
+<h2>Predmet: @Model.NazivPredmeta</h2>
+<h2>Nastavnik: @Model.ImePrezimeNastavnik</h2>
+<h2>Godina: @Model.AkademskaGodina</h2>
+<h2>Datum: @Model.DatumIspita</h2>
+<h2>Napomena: @Model.Napomena</h2>
+
+
+<div id="divTabela">
+
+</div>
+
+<script>
+    $(document).ready(function () {
+        $.get("/Ispit/IspitDetaljiPV?id=@Model.IspitID", function (data, status) {
+            $("#divTabela").html(data);
+        });
+    });
+</script>
