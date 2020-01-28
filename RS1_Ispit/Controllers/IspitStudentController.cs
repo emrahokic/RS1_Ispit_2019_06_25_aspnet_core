@@ -48,7 +48,7 @@ namespace RS1_Ispit_asp.net_core.Controllers
 
 
         [HttpPost]
-        public IActionResult UpdateOcjena(UpdateOcjenaVM model,int Ocjena,int IspitStudentiID)
+        public IActionResult UpdateOcjena(int Ocjena,int IspitStudentiID)
         {
             
             IspitStudenti ispit = _db.IspitStudenti.Where(i => i.IspitStudentiID == IspitStudentiID).FirstOrDefault();
